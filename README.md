@@ -18,7 +18,6 @@ A shared expense tracker for two people. Track who owes what, split costs, settl
 - **Insights** — Category breakdowns, spending trends, and fun facts about your shared expenses.
 - **History** — Full timeline with search, edit, and CSV export.
 - **PWA** — Install on your phone's home screen. Works offline with background sync.
-- **Notifications** — Optional email alerts when your partner adds an expense (via EmailJS).
 
 ## Quick Start
 
@@ -40,7 +39,6 @@ The balance shows how much one person owes the other across all currencies, with
 | Frontend | Vanilla JS, HTML, CSS (no build step) |
 | Database | Firebase Firestore (real-time sync, offline) |
 | Auth | Firebase Authentication (Google sign-in) |
-| Notifications | EmailJS (optional) |
 | Hosting | Any static host |
 
 ## License

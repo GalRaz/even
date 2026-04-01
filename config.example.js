@@ -16,16 +16,7 @@ const APP_CONFIG = {
     appId: "",            // starts with "1:"
   },
 
-  // EmailJS — optional email notifications (set enabled: true to activate)
-  // Sign up at https://www.emailjs.com
-  emailjs: {
-    enabled: false,
-    publicKey: "",    // EmailJS dashboard → Account → Public Key
-    serviceId: "",    // EmailJS dashboard → Email Services
-    templateId: "",   // EmailJS dashboard → Email Templates
-  },
-
-  // Your deployed app URL — used in notification emails (leave empty to auto-detect)
+  // Your deployed app URL (leave empty to auto-detect)
   // e.g. "https://even.yourdomain.com"
   appUrl: "",
 };
