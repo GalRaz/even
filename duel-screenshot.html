@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  html, body { width: 668px; margin: 0; overflow: hidden; background: var(--bg); }
+  .page { padding: 52px 20px 40px; }
+
+  .game-badge {
+    display: inline-block;
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .duel-game { text-align: center; margin-bottom: 24px; }
+  .duel-game .lead { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
+  .duel-game .sub { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 36px; }
+  .rps-choice { flex-direction: column; gap: 6px; height: 100px; width: 100px; font-size: 2.4rem; }
+  .rps-choice span { font-size: 0.72rem; color: var(--text-muted); }
+  .rps-choices { gap: 16px; margin: 0 0 28px; }
+  .duel-result { font-size: 1.3rem; padding: 20px 24px; margin: 0 0 24px; }
+  .reveal { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 32px; }
+
+  .score-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .score-player { flex: 1; }
+  .score-player-name { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .score-player-val { font-size: 2rem; font-weight: 700; }
+  .score-player-val.winning { color: var(--green); }
+  .score-vs { font-size: 1.1rem; color: var(--text-muted); padding: 0 12px; }
+  .score-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+  .duel-history {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .duel-history-label {
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 16px;
+  }
+  .history-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--surface-2);
+    font-size: 0.9rem;
+  }
+  .history-row:last-child { border-bottom: none; }
+  .history-game { color: var(--text); font-weight: 500; }
+  .history-date { color: var(--text-muted); font-size: 0.78rem; margin-top: 2px; }
+  .result-win { color: var(--green); font-weight: 600; }
+  .result-loss { color: var(--red); font-weight: 600; }
+  .result-tie { color: var(--text-muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="screen-header">
+    <button class="btn-icon">←</button>
+    <h2>Weekly Duel</h2>
+  </div>
+
+  <div class="duel-game">
+    <div class="game-badge">✊ Rock Paper Scissors · Week 14</div>
+    <p class="lead">Bob has played! Your turn.</p>
+    <p class="sub">Your choice is hidden until you both pick.</p>
+    <div class="rps-choices">
+      <div class="rps-choice selected">✊<span>Rock</span></div>
+      <div class="rps-choice">✋<span>Paper</span></div>
+      <div class="rps-choice">✌️<span>Scissors</span></div>
+    </div>
+    <div class="duel-result win" style="background:rgba(74,124,80,0.1);color:#4a7c50">You win! Rock beats Scissors · +$10</div>
+    <p class="reveal">Bob played ✌️ · You played ✊</p>
+  </div>
+
+  <div class="score-card">
+    <div class="score-player">
+      <div class="score-player-name">Alice</div>
+      <div class="score-player-val winning">8</div>
+      <div class="score-note">+$30 ahead</div>
+    </div>
+    <div class="score-vs">vs</div>
+    <div class="score-player">
+      <div class="score-player-name">Bob</div>
+      <div class="score-player-val">5</div>
+      <div class="score-note">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="duel-history">
+    <div class="duel-history-label">Past Duels</div>
+    <div class="history-row">
+      <div><div class="history-game">Rock Paper Scissors</div><div class="history-date">Week 14 · Alice wins</div></div>
+      <div class="result-win">+$10</div>
+    </div>
+    <div class="history-row">
+      <div><div class="history-game">Coin Flip</div><div class="history-date">Week 13 · Bob wins</div></div>
+      <div class="result-loss">−$10</div>
+    </div>
+    <div class="history-row">
+      <div><div class="history-game">Wheel of Fortune</div><div class="history-date">Week 12 · Alice wins</div></div>
+      <div class="result-win">+$10</div>
+    </div>
+    <div class="history-row">
+      <div><div class="history-game">Lucky Number</div><div class="history-date">Week 11 · Tie</div></div>
+      <div class="result-tie">Tie</div>
+    </div>
+    <div class="history-row">
+      <div><div class="history-game">Scratch Card</div><div class="history-date">Week 10 · Alice wins</div></div>
+      <div class="result-win">+$10</div>
+    </div>
+    <div class="history-row">
+      <div><div class="history-game">Wheel of Fortune</div><div class="history-date">Week 9 · Bob wins</div></div>
+      <div class="result-loss">−$10</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
