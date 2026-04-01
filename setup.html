@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halfsies — Setup</title>
+  <title>Even — Setup</title>
   <link rel="icon" href="assets/icons/icon.png" type="image/png">
   <link rel="stylesheet" href="css/setup.css">
 </head>
@@ -15,14 +15,14 @@
 
     <!-- Step 1: Welcome -->
     <section class="step" id="step-1">
-      <h1>Welcome to Halfsies</h1>
+      <h1>Welcome to Even</h1>
       <p class="lead">A shared expense tracker for two people.</p>
       <p>This wizard will walk you through setting up your own instance. You'll need:</p>
       <ul>
         <li>A Google account</li>
         <li>~10 minutes</li>
       </ul>
-      <p>At the end, you'll download a <code>config.js</code> file that makes Halfsies yours.</p>
+      <p>At the end, you'll download a <code>config.js</code> file that makes Even yours.</p>
     </section>
 
     <!-- Step 2: Create Firebase Project -->
@@ -31,12 +31,12 @@
       <ol>
         <li>Go to <a href="https://console.firebase.google.com" target="_blank" rel="noopener">Firebase Console</a></li>
         <li>Click <strong>"Create a project"</strong></li>
-        <li>Name it anything (e.g. "halfsies")</li>
+        <li>Name it anything (e.g. "even")</li>
         <li>Disable Google Analytics (not needed) and click Create</li>
       </ol>
       <details>
         <summary>Why do I need Firebase?</summary>
-        <p>Firebase provides the database (Firestore) and sign-in (Google Auth) that Halfsies uses to sync expenses between two people in real time. The free tier is more than enough.</p>
+        <p>Firebase provides the database (Firestore) and sign-in (Google Auth) that Even uses to sync expenses between two people in real time. The free tier is more than enough.</p>
       </details>
     </section>
 
@@ -99,14 +99,14 @@
       <div id="firebase-status" class="status hidden"></div>
       <details>
         <summary>What does this config do?</summary>
-        <p>These values tell Halfsies which Firebase project to connect to. They're safe to include in client-side code — security is enforced by your Firestore rules, not by hiding these values.</p>
+        <p>These values tell Even which Firebase project to connect to. They're safe to include in client-side code — security is enforced by your Firestore rules, not by hiding these values.</p>
       </details>
     </section>
 
     <!-- Step 6: Names -->
     <section class="step hidden" id="step-6">
       <h2>Step 5: Your Names</h2>
-      <p>What should Halfsies call you two? These are display names shown in the app. You can change them later in Firebase.</p>
+      <p>What should Even call you two? These are display names shown in the app. You can change them later in Firebase.</p>
       <div class="names-row">
         <div class="input-group">
           <label for="name1">Person 1 name</label>

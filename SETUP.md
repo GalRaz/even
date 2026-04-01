@@ -84,13 +84,6 @@ const APP_CONFIG = {
     appId: "1:123:web:abc123",
   },
 
-  emailjs: {
-    enabled: false,
-    publicKey: "",
-    serviceId: "",
-    templateId: "",
-  },
-
   appUrl: "",
 };
 ```
