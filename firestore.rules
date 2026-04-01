@@ -1,0 +1,48 @@
+// Replace YOUR_EMAIL_1 and YOUR_EMAIL_2 with the Gmail addresses
+// of the two users who will share this app.
+// See SETUP.md or run the setup wizard (setup.html) for help.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAllowedUser() {
+      return request.auth != null &&
+             request.auth.token.email in ['YOUR_EMAIL_1@example.com', 'YOUR_EMAIL_2@example.com'];
+    }
+
+    function isOwnEntry() {
+      return request.resource.data.addedBy == request.auth.uid;
+    }
+
+    match /expenses/{doc} {
+      allow read: if isAllowedUser();
+      allow create: if isAllowedUser() && isOwnEntry();
+      allow update, delete: if isAllowedUser() && resource.data.addedBy == request.auth.uid;
+    }
+
+    match /payments/{doc} {
+      allow read: if isAllowedUser();
+      allow create: if isAllowedUser() && isOwnEntry();
+      allow update, delete: if isAllowedUser() && resource.data.addedBy == request.auth.uid;
+    }
+
+    match /duels/{doc} {
+      allow read: if isAllowedUser();
+      allow create: if isAllowedUser();
+      allow update: if isAllowedUser();
+      allow delete: if isAllowedUser();
+    }
+
+    match /users/{userId} {
+      allow read: if isAllowedUser();
+      allow write: if isAllowedUser() && userId == request.auth.uid;
+    }
+
+    match /settings/{doc} {
+      allow read, write: if isAllowedUser();
+    }
+
+    match /recurring/{doc} {
+      allow read, write: if isAllowedUser();
+    }
+  }
+}

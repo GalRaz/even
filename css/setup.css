@@ -1,0 +1,225 @@
+/* Setup Wizard Styles — matches Halfsies app aesthetic */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f2f0eb;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.setup-container {
+  max-width: 540px;
+  width: 100%;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #e8927c;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  width: 12.5%;
+}
+
+/* Steps */
+.step { animation: fadeIn 0.25s ease; }
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 22px; margin-bottom: 12px; }
+h3 { font-size: 18px; margin: 20px 0 8px; }
+p { line-height: 1.6; margin-bottom: 12px; }
+.lead { font-size: 18px; color: #555; }
+
+ol, ul { margin: 12px 0 16px 20px; line-height: 1.8; }
+
+a { color: #e8927c; }
+
+code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 16px;
+}
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #555;
+}
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #e8927c;
+}
+.input-group textarea {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.names-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hint {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Code block */
+.code-block {
+  position: relative;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+.code-block pre {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.btn-copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #333;
+  color: #ccc;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.btn-copy:hover { background: #444; }
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary {
+  background: #e8927c;
+  color: #fff;
+}
+.btn-primary:hover { background: #d4806c; }
+.btn-secondary {
+  background: #ddd;
+  color: #333;
+}
+.btn-secondary:hover { background: #ccc; }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  gap: 12px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+/* Toggle button */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  margin-bottom: 16px;
+}
+.toggle-label { font-weight: 600; }
+.toggle-btn {
+  padding: 6px 16px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.toggle-btn[aria-pressed="true"] {
+  background: #e8927c;
+  color: #fff;
+  border-color: #e8927c;
+}
+
+/* Details/expand */
+details {
+  margin: 16px 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #e8927c;
+}
+details p { margin-top: 8px; font-size: 14px; color: #666; }
+
+/* Status messages */
+.status {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.status-success { background: #e8f5e9; color: #2e7d32; }
+.status-error { background: #fce4ec; color: #c62828; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .names-row { grid-template-columns: 1fr; }
+  h1 { font-size: 24px; }
+}
