@@ -3,9 +3,14 @@
 A shared expense tracker for two people. Track who owes what, split costs, settle up — all in a lightweight PWA that works offline.
 
 <p align="center">
-  <img src="assets/screenshots/dashboard.png" alt="Dashboard with balance and history" width="280">
-  &nbsp;&nbsp;&nbsp;
-  <img src="assets/screenshots/insights.png" alt="Insights with spending breakdown" width="280">
+  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="240">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/add-expense.png" alt="Add expense" width="240">
+</p>
+<p align="center">
+  <img src="assets/screenshots/insights.png" alt="Insights — spending by category" width="240">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/insights2.png" alt="Insights — where you spend and fun stats" width="240">
 </p>
 
 ## Features
