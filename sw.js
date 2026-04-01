@@ -1,4 +1,4 @@
-const CACHE_NAME = 'halfsies-v1';
+const CACHE_NAME = 'even-v1';
 const ASSETS = [
   './',
   './index.html',

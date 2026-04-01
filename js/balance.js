@@ -192,8 +192,8 @@ export async function loadDashboard() {
     // Recurring items only show in history after processRecurring creates the actual expense
 
     // Get user preferences
-    const balanceView = localStorage.getItem('halfsies-balance-view') || 'consolidated';
-    const consolCurrency = localStorage.getItem('halfsies-consol-currency') || 'USD';
+    const balanceView = localStorage.getItem('even-balance-view') || 'consolidated';
+    const consolCurrency = localStorage.getItem('even-consol-currency') || 'USD';
     let symbol = CURRENCY_SYMBOLS[consolCurrency] || consolCurrency;
 
     // Compute per-currency balances (source of truth)
@@ -278,12 +278,12 @@ export async function loadDashboard() {
 
     // Save filtered currency balances and sync used-currencies list
     try {
-      localStorage.setItem('halfsies-currency-balances', JSON.stringify(currencyBalances));
+      localStorage.setItem('even-currency-balances', JSON.stringify(currencyBalances));
       // Remove dust currencies from the used-currencies list too
       const activeCurrencies = Object.keys(currencyBalances);
-      const usedCurrencies = JSON.parse(localStorage.getItem('halfsies-used-currencies') || '[]');
+      const usedCurrencies = JSON.parse(localStorage.getItem('even-used-currencies') || '[]');
       const filtered = usedCurrencies.filter(c => activeCurrencies.includes(c));
-      localStorage.setItem('halfsies-used-currencies', JSON.stringify(filtered));
+      localStorage.setItem('even-used-currencies', JSON.stringify(filtered));
     } catch (e) {}
 
     // Render balance label

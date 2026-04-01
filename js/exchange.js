@@ -1,6 +1,6 @@
 // Exchange rate cache — avoids repeated API calls in a single session
 const rateCache = {};
-const LS_KEY = 'halfsies-rates';
+const LS_KEY = 'even-rates';
 
 // Load saved rates from localStorage
 function loadSavedRates() {

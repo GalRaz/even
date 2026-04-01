@@ -278,9 +278,9 @@ function buildCurrencySelect(extraCurrency) {
   // Get currencies with balances and their sizes
   const balanceSizes = {};
   try {
-    const used = JSON.parse(localStorage.getItem('halfsies-used-currencies') || '[]');
+    const used = JSON.parse(localStorage.getItem('even-used-currencies') || '[]');
     used.forEach(c => prioritySet.add(c));
-    const sizes = JSON.parse(localStorage.getItem('halfsies-currency-balances') || '{}');
+    const sizes = JSON.parse(localStorage.getItem('even-currency-balances') || '{}');
     Object.assign(balanceSizes, sizes);
     // Add any currency with a non-zero balance to priority
     for (const [cur, amt] of Object.entries(sizes)) {
@@ -289,11 +289,11 @@ function buildCurrencySelect(extraCurrency) {
   } catch (e) {}
 
   // Always include last used
-  const lastUsed = localStorage.getItem('halfsies-last-currency');
+  const lastUsed = localStorage.getItem('even-last-currency');
   if (lastUsed) prioritySet.add(lastUsed);
 
   // Always include consolidation currency
-  const consolCur = localStorage.getItem('halfsies-consol-currency') || 'USD';
+  const consolCur = localStorage.getItem('even-consol-currency') || 'USD';
   prioritySet.add(consolCur);
 
   select.innerHTML = '';
@@ -345,14 +345,14 @@ function buildConsolCurrencySelect(currentValue) {
   const balanceSizes = {};
 
   try {
-    const sizes = JSON.parse(localStorage.getItem('halfsies-currency-balances') || '{}');
+    const sizes = JSON.parse(localStorage.getItem('even-currency-balances') || '{}');
     Object.assign(balanceSizes, sizes);
     for (const [cur, amt] of Object.entries(sizes)) {
       if (Math.abs(amt) > 0.005) prioritySet.add(cur);
     }
   } catch (e) {}
 
-  const lastUsed = localStorage.getItem('halfsies-last-currency');
+  const lastUsed = localStorage.getItem('even-last-currency');
   if (lastUsed) prioritySet.add(lastUsed);
   if (currentValue) prioritySet.add(currentValue);
 
@@ -405,7 +405,7 @@ document.getElementById('fab-add').addEventListener('click', () => {
   );
   // Build smart currency dropdown and select last-used
   buildCurrencySelect();
-  const defaultCurrency = localStorage.getItem('halfsies-last-currency') || 'USD';
+  const defaultCurrency = localStorage.getItem('even-last-currency') || 'USD';
   document.getElementById('entry-currency').value = defaultCurrency;
   // Reset edit UI
   const deleteBtn = document.getElementById('btn-delete-entry');
@@ -458,13 +458,13 @@ async function loadSettings() {
   }
 
   // Load balance view preference
-  const balanceView = localStorage.getItem('halfsies-balance-view') || 'consolidated';
+  const balanceView = localStorage.getItem('even-balance-view') || 'consolidated';
   document.querySelectorAll('#settings-balance-view .toggle-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.value === balanceView);
   });
 
   // Load consolidation currency with smart sorting
-  const consolCurrency = localStorage.getItem('halfsies-consol-currency') || 'USD';
+  const consolCurrency = localStorage.getItem('even-consol-currency') || 'USD';
   buildConsolCurrencySelect(consolCurrency);
 
   // Load recurring expenses
@@ -606,12 +606,12 @@ document.querySelectorAll('#settings-balance-view .toggle-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('#settings-balance-view .toggle-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    localStorage.setItem('halfsies-balance-view', btn.dataset.value);
+    localStorage.setItem('even-balance-view', btn.dataset.value);
   });
 });
 
 document.getElementById('settings-consolidation-currency').addEventListener('change', (e) => {
-  localStorage.setItem('halfsies-consol-currency', e.target.value);
+  localStorage.setItem('even-consol-currency', e.target.value);
 });
 
 document.getElementById('btn-export-csv').addEventListener('click', async () => {
@@ -653,7 +653,7 @@ document.getElementById('btn-export-csv').addEventListener('click', async () => 
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `halfsies-export-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `even-export-${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
     URL.revokeObjectURL(url);
 
@@ -1053,7 +1053,7 @@ async function renderSettleUp() {
     html += '</div>';
 
     // Settle All section
-    const consolCurrency = localStorage.getItem('halfsies-consol-currency') || 'USD';
+    const consolCurrency = localStorage.getItem('even-consol-currency') || 'USD';
     const consolSym = getCurrencySymbol(consolCurrency);
 
     // Convert per-currency balances to consolCurrency via live rates (signed sum, same as dashboard)
@@ -1118,11 +1118,11 @@ async function renderSettleUp() {
           });
 
           // Track used currency
-          localStorage.setItem('halfsies-last-currency', currency);
-          const usedCurrencies = JSON.parse(localStorage.getItem('halfsies-used-currencies') || '[]');
+          localStorage.setItem('even-last-currency', currency);
+          const usedCurrencies = JSON.parse(localStorage.getItem('even-used-currencies') || '[]');
           if (!usedCurrencies.includes(currency)) {
             usedCurrencies.push(currency);
-            localStorage.setItem('halfsies-used-currencies', JSON.stringify(usedCurrencies));
+            localStorage.setItem('even-used-currencies', JSON.stringify(usedCurrencies));
           }
 
           btn.textContent = 'Done!';
@@ -1339,12 +1339,12 @@ document.getElementById('form-entry').addEventListener('submit', async (e) => {
     }
 
     // Track last-used and used currencies
-    localStorage.setItem('halfsies-last-currency', currency);
+    localStorage.setItem('even-last-currency', currency);
     try {
-      const usedCurrencies = JSON.parse(localStorage.getItem('halfsies-used-currencies') || '[]');
+      const usedCurrencies = JSON.parse(localStorage.getItem('even-used-currencies') || '[]');
       if (!usedCurrencies.includes(currency)) {
         usedCurrencies.push(currency);
-        localStorage.setItem('halfsies-used-currencies', JSON.stringify(usedCurrencies));
+        localStorage.setItem('even-used-currencies', JSON.stringify(usedCurrencies));
       }
     } catch (e) {}
 
