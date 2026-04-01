@@ -1,6 +1,6 @@
 # Even
 
-A shared expense tracker for two people. Track who owes what, split costs, settle up.
+A shared expense tracker for two people. Track who owes what, split costs, settle up. Runs as a webapp on your phone.
 
 <p align="center">
   <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="240">
