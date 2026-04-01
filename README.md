@@ -2,6 +2,14 @@
 
 A shared expense tracker for two people. Track who owes what, split costs, settle up — all in a lightweight PWA that works offline.
 
+<p align="center">
+  <img src="assets/screenshots/app-auth.png" alt="Halfsies sign-in" width="260">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/setup-welcome.png" alt="Setup wizard" width="260">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/setup-generate.png" alt="Config generation" width="260">
+</p>
+
 ## Features
 
 - **Expenses & Payments** — Log shared costs with descriptions, amounts, and currency. Settle up when ready.
