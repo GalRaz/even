@@ -1,6 +1,6 @@
 # Even
 
-A shared expense tracker for two people. Track who owes what, split costs, settle up — all in a lightweight PWA that works offline.
+A shared expense tracker for two people. Track who owes what, split costs, settle up.
 
 <p align="center">
   <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="240">
