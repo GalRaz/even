@@ -3,12 +3,12 @@
 A shared expense tracker for two people. Track who owes what, split costs, settle up. Runs as a webapp on your phone.
 
 <p align="center">
-  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="240">
+  <img src="assets/screenshots/add-expense.png" alt="Add expense" width="240">
   &nbsp;&nbsp;
-  <img src="assets/screenshots/duel.png" alt="Weekly Duel — Rock Paper Scissors" width="240">
+  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="240">
 </p>
 <p align="center">
-  <img src="assets/screenshots/add-expense.png" alt="Add expense" width="240">
+  <img src="assets/screenshots/duel.png" alt="Weekly Duel — Rock Paper Scissors" width="240">
   &nbsp;&nbsp;
   <img src="assets/screenshots/insights.png" alt="Insights — where you spend and fun stats" width="240">
 </p>
