@@ -1,6 +1,6 @@
 {
-  "name": "Halfsies",
-  "short_name": "Halfsies",
+  "name": "Even",
+  "short_name": "Even",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f2f0eb",

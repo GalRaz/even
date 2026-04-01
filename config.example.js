@@ -1,30 +1,31 @@
-// Halfsies Configuration
+// Even Configuration
 // Copy this file to config.js and fill in your values.
 // See SETUP.md or open setup.html for a guided walkthrough.
 
 const APP_CONFIG = {
-  // App name (shown in header and browser tab)
-  appName: "Halfsies",
+  // Display name shown in the app header and browser tab
+  appName: "Even",
 
   // Firebase — create a project at https://console.firebase.google.com
   firebase: {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
+    apiKey: "",           // Firebase console → Project settings → Your apps
+    authDomain: "",       // e.g. your-project.firebaseapp.com
+    projectId: "",        // e.g. your-project
+    storageBucket: "",    // e.g. your-project.appspot.com
+    messagingSenderId: "", // numeric ID from Firebase config
+    appId: "",            // starts with "1:"
   },
 
-  // EmailJS — optional email notifications
+  // EmailJS — optional email notifications (set enabled: true to activate)
   // Sign up at https://www.emailjs.com
   emailjs: {
     enabled: false,
-    publicKey: "",
-    serviceId: "",
-    templateId: "",
+    publicKey: "",    // EmailJS dashboard → Account → Public Key
+    serviceId: "",    // EmailJS dashboard → Email Services
+    templateId: "",   // EmailJS dashboard → Email Templates
   },
 
-  // App URL — used in notification emails (leave empty to auto-detect)
+  // Your deployed app URL — used in notification emails (leave empty to auto-detect)
+  // e.g. "https://even.yourdomain.com"
   appUrl: "",
 };
