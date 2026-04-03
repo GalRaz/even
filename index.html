@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f2f0eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Halfsies</title>
+  <title>Even</title>
   <link rel="icon" href="assets/icons/icon.png" type="image/png">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/style.css">
@@ -16,8 +16,8 @@
   <!-- Splash screen -->
   <div id="splash" class="splash">
     <div class="splash-content">
-      <img class="splash-icon" src="assets/icons/icon.png" alt="Halfsies">
-      <h1 class="splash-title">Halfsies</h1>
+      <img class="splash-icon" src="assets/icons/icon.png" alt="Even">
+      <h1 class="splash-title">Even</h1>
       <p class="splash-sub" id="splash-sub">Counting the damage...</p>
     </div>
   </div>
@@ -26,7 +26,7 @@
     <!-- Auth screen -->
     <div id="screen-auth" class="screen">
       <div class="auth-container">
-        <h1>Halfsies</h1>
+        <h1>Even</h1>
         <p class="subtitle">Expense tracker for two</p>
         <button id="btn-google-login" class="btn btn-primary">Sign in with Google</button>
       </div>
@@ -36,7 +36,7 @@
     <div id="screen-dashboard" class="screen">
       <div class="dashboard-content">
         <div class="dashboard-header">
-          <h1 class="app-title">Halfsies</h1>
+          <h1 class="app-title">Even</h1>
           <div class="header-actions">
             <button id="btn-insights" class="btn-icon">📈</button>
             <button id="btn-settings" class="btn-icon">⚙</button>
@@ -75,7 +75,6 @@
         </div>
       </div>
       <form id="form-entry" class="form">
-        <input type="text" id="entry-desc" placeholder="What was it for?">
         <div class="row">
           <input type="number" id="entry-amount" placeholder="Amount" step="0.01" inputmode="decimal" required>
           <select id="entry-currency">
@@ -111,6 +110,7 @@
             <option value="IDR">Rp IDR</option>
           </select>
         </div>
+        <input type="text" id="entry-desc" placeholder="What was it for?">
         <div id="expense-options" class="toggle-group">
           <label>How to split</label>
           <div class="split-options" id="entry-split-options">
